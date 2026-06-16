@@ -468,7 +468,7 @@ export default function App() {
         {/* Toggle Button */}
         <button 
           onClick={() => setIsChatOpen(!isChatOpen)}
-          className="rounded-full shadow-lg border hover:scale-105 transition-all flex items-center justify-center cursor-pointer p-0 overflow-hidden no-print"
+          className={`rounded-full shadow-lg border hover:scale-105 transition-all flex items-center justify-center cursor-pointer p-0 overflow-hidden no-print ${!isChatOpen ? 'floating-effect' : ''}`}
           title={isChatOpen ? "Close Chatbot" : "Open Clinical Chatbot"}
           style={{
             width: '56px',
