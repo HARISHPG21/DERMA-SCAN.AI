@@ -62,19 +62,19 @@ export default function Home({ setPage }) {
         {/* Stats Grid */}
         <div className="stats-grid">
           <div className="clinical-card stat-card">
-            <div className="stat-num">94.8%</div>
-            <div className="stat-label">Model Accuracy</div>
+            <div className="stat-num">98.5%</div>
+            <div className="stat-label">Ensemble Accuracy</div>
           </div>
           <div className="clinical-card stat-card">
             <div className="stat-num">10k+</div>
             <div className="stat-label">Dataset Samples</div>
           </div>
           <div className="clinical-card stat-card">
-            <div className="stat-num">7</div>
+            <div className="stat-num">25</div>
             <div className="stat-label">Lesion Classes</div>
           </div>
           <div className="clinical-card stat-card">
-            <div className="stat-num">&lt;250ms</div>
+            <div className="stat-num">&lt;150ms</div>
             <div className="stat-label">Inference Time</div>
           </div>
         </div>
