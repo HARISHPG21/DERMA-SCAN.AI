@@ -557,8 +557,9 @@ export default function App() {
               style={{ backgroundColor: 'var(--bg-nav)', borderTopColor: 'var(--border-color)' }}
             >
               <label 
-                className="cursor-pointer hover:text-white transition-colors shrink-0 p-1"
+                className="cursor-pointer transition-colors shrink-0 p-1 rounded hover:bg-[var(--primary-glow)]"
                 style={{ color: 'var(--text-mute)' }}
+                title="Upload image for analysis"
               >
                 <input 
                   type="file" 

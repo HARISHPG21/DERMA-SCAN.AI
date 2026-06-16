@@ -460,7 +460,7 @@ export default function DiagnosticCenter() {
 
             {!selectedImage && isCameraActive && (
               <div className="flex flex-col items-center gap-4 w-full">
-                <div className="relative w-full max-w-[300px] aspect-square rounded-lg overflow-hidden border border-clinical-primary bg-black">
+                <div className="relative w-full max-w-[300px] aspect-square rounded-lg overflow-hidden border border-[var(--border-color-glow)]" style={{ background: 'var(--bg-surface)' }}>
                   <video 
                     ref={videoRef} 
                     autoPlay 
@@ -489,7 +489,7 @@ export default function DiagnosticCenter() {
 
             {selectedImage && (
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <div className="scan-container relative w-full max-w-[300px] aspect-square rounded-lg overflow-hidden border border-slate-800 bg-black">
+                <div className="scan-container relative w-full max-w-[300px] aspect-square rounded-lg overflow-hidden border border-[var(--border-color)]" style={{ background: 'var(--bg-surface)' }}>
                   <img src={selectedImage} alt="Lesion capture" className="scan-image w-full h-full object-cover" style={getPreviewStyle()} />
                   
                   {/* Segmented Mask Overlay */}

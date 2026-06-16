@@ -159,11 +159,12 @@ export default function ClinicalInsights({ theme }) {
       const alpha = 0.15 + (val / 100) * 0.75;
       return {
         background: `rgba(16, 185, 129, ${alpha})`,
-        color: '#ffffff',
-        border: '1.5px solid rgba(16, 185, 129, 0.4)'
+        color: isLight ? '#064e3b' : '#ffffff',
+        border: '1.5px solid rgba(16, 185, 129, 0.4)',
+        fontWeight: 700
       };
     } else {
-      if (val === 0) return { background: 'rgba(255,255,255,0.01)', color: 'var(--text-mute)', opacity: 0.35 };
+      if (val === 0) return { background: 'transparent', color: 'var(--text-mute)', opacity: 0.35 };
       const alpha = 0.08 + (val / 10) * 0.4;
       return {
         background: `rgba(244, 63, 94, ${alpha})`,
@@ -188,7 +189,7 @@ export default function ClinicalInsights({ theme }) {
 
         {/* Algorithm Comparisons Tab Panel */}
         <div className="clinical-card mb-8">
-          <div className="flex justify-between items-center border-b border-slate-800 pb-2 mb-6 flex-wrap gap-4">
+          <div className="flex justify-between items-center border-b pb-2 mb-6 flex-wrap gap-4" style={{ borderBottomColor: 'var(--border-color)' }}>
             <h3 className="dashboard-card-title mb-0">
               <BarChart2 size={18} /> Model Performance Benchmarks
             </h3>
@@ -196,21 +197,21 @@ export default function ClinicalInsights({ theme }) {
             <div className="flex gap-2">
               <button 
                 onClick={() => setActiveChartTab('scores')}
-                className={`px-3 py-1.5 rounded text-xs font-bold transition-all ${
-                  activeChartTab === 'scores' 
-                    ? 'bg-clinical-primary text-white' 
-                    : 'bg-[var(--bg-main)] text-[var(--text-mute)] hover:bg-[var(--border-color)]'
-                }`}
+                className={`px-3 py-1.5 rounded text-xs font-bold transition-all`}
+                style={activeChartTab === 'scores'
+                  ? { background: 'var(--primary)', color: isLight ? '#fff' : 'var(--text-dark)', boxShadow: '0 2px 8px var(--primary-glow)' }
+                  : { background: 'var(--bg-main)', color: 'var(--text-mute)', border: '1px solid var(--border-color)' }
+                }
               >
                 Accuracy &amp; F1 Metrics
               </button>
               <button 
                 onClick={() => setActiveChartTab('latency')}
-                className={`px-3 py-1.5 rounded text-xs font-bold transition-all ${
-                  activeChartTab === 'latency' 
-                    ? 'bg-clinical-primary text-white' 
-                    : 'bg-[var(--bg-main)] text-[var(--text-mute)] hover:bg-[var(--border-color)]'
-                }`}
+                className={`px-3 py-1.5 rounded text-xs font-bold transition-all`}
+                style={activeChartTab === 'latency'
+                  ? { background: 'var(--primary)', color: isLight ? '#fff' : 'var(--text-dark)', boxShadow: '0 2px 8px var(--primary-glow)' }
+                  : { background: 'var(--bg-main)', color: 'var(--text-mute)', border: '1px solid var(--border-color)' }
+                }
               >
                 Inference Latency
               </button>
